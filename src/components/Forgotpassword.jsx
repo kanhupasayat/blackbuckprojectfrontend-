@@ -19,7 +19,7 @@ const ForgotPassword = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/sent-reset-password-email/",
+        "https://kanhupasayatweb.pythonanywhere.com/api/sent-reset-password-email/",
         { email }
       );
       setMessage("Password reset email sent!");

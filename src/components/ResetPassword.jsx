@@ -32,7 +32,7 @@ const ResetPassword = () => {
     }
     try {
       const response = await axios.post(
-        `http://localhost:8000/api/reset-password/${uid}/${token}/`,
+        `https://kanhupasayatweb.pythonanywhere.com/api/reset-password/${uid}/${token}/`,
         {
           password,
           password2, // Include confirm password in the payload

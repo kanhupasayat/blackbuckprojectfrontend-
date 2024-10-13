@@ -51,7 +51,7 @@ const DataAdd = () => {
   const fetchSubmittedData = async () => {
     try {
       const response = await axios.get(
-        `http://127.0.0.1:8000/api/userdatastore/?user=${userId}`,
+        `https://kanhupasayatweb.pythonanywhere.com/api/userdatastore/?user=${userId}`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -89,7 +89,7 @@ const DataAdd = () => {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/userdatastore/",
+        "https://kanhupasayatweb.pythonanywhere.com/api/userdatastore/",
         {
           phone_number: addData,
           date: dateData.format("YYYY-MM-DD"),

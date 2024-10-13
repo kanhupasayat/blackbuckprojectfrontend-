@@ -39,7 +39,7 @@ const Singuppage = () => {
     // Send the form data to the Django backend
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/register/",
+        "https://kanhupasayatweb.pythonanywhere.com/api/register/",
         formData,
         {
           headers: {

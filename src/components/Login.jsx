@@ -30,7 +30,7 @@ const Login = () => {
 
         try {
             const response = await axios.post(
-                "http://127.0.0.1:8000/api/loginpage/",
+                "https://kanhupasayatweb.pythonanywhere.com/api/loginpage/",
                 loginData,
                 {
                     headers: {

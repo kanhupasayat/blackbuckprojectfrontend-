@@ -47,7 +47,7 @@ const Today = () => {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/v1/token/refresh/",
+        "https://kanhupasayatweb.pythonanywhere.com/api/v1/token/refresh/",
         {
           refresh: refreshToken,
         }
@@ -65,7 +65,7 @@ const Today = () => {
 
   const fetchUserData = async (accessToken) => {
     try {
-      const response = await axios.get("http://127.0.0.1:8000/api/user-data/", {
+      const response = await axios.get("https://kanhupasayatweb.pythonanywhere.com/api/user-data/", {
         headers: { Authorization: `Bearer ${accessToken}` },
       });
 
@@ -98,7 +98,7 @@ const Today = () => {
     }
 
     try {
-      await axios.delete(`http://127.0.0.1:8000/api/datastore/delete/${phone_id}`, {
+      await axios.delete(`https://kanhupasayatweb.pythonanywhere.com/api/datastore/delete/${phone_id}`, {
         headers: { Authorization: `Bearer ${accessToken}` },
       });
 
