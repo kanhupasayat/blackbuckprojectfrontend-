@@ -20,7 +20,12 @@ const ForgotPassword = () => {
     try {
       const response = await axios.post(
         "https://kanhupasayatweb.pythonanywhere.com/api/sent-reset-password-email/",
-        { email }
+        { email },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
       );
       setMessage("Password reset email sent!");
       setError("");
@@ -29,6 +34,7 @@ const ForgotPassword = () => {
       setMessage("");
     }
   };
+  
 
   return (
     <div
@@ -66,4 +72,3 @@ const ForgotPassword = () => {
 };
 
 export default ForgotPassword;
-
