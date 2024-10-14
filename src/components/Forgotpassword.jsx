@@ -11,29 +11,29 @@ const ForgotPassword = () => {
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post(
-        "https://kanhupasayatweb.pythonanywhere.com/api/sent-reset-password-email/",
-        { email },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      setMessage("Password reset email sent!");
-      setError("");
-    } catch (err) {
-      setError("Failed to send email. Please try again.");
-      setMessage("");
-    }
-  };
+  e.preventDefault();
+  console.log("Sending request with email:", email);  // Add debugging log
+  try {
+    const response = await axios.post(
+      "https://kanhupasayatweb.pythonanywhere.com/api/sent-reset-password-email/",
+      { email },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    console.log("Response received:", response.data); // Log the response for debugging
+    setMessage("Password reset email sent!");
+    setError("");
+  } catch (err) {
+    console.error("Error:", err); // Log the error response
+    setError("Failed to send email. Please try again.");
+    setMessage("");
+  }
+};
+
   
 
   return (
